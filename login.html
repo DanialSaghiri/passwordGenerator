@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./assets/style/css/pages/login.css" />
+  </head>
+
+  <body>
+    <!---------------- modal for first login ---------------->
+    <form class="wrapperModalForFirstLogin" id="wrapper-modal-first-login" autocomplete="off">
+      <h2 class="wrapperModalForFirstLogin__title">PASSWORD GENERATOR</h2>
+      <input
+        type="text"
+        value="root"
+        class="wrapperModalForFirstLogin__inputUsername"
+        id="modal-login-input-username"
+        readonly />
+      <input
+        type="password"
+        class="wrapperModalForFirstLogin__inputPassword"
+        placeholder="Enter Your Password"
+        id="modal-login-input-pass" />
+      <input
+        type="password"
+        class="wrapperModalForFirstLogin__inputPasswordAgain"
+        placeholder="Enter Your Password Again"
+        id="modal-login-input-pass-again" />
+      <h3 id="modal-message-check-pass" class="wrapperModalForFirstLogin__messageLogin"
+        >The Passwords Entered Do Not Match</h3
+      >
+      <button class="wrapperModalForFirstLogin__btnLogin" id="modal-login-btn">Login</button>
+      <h3 id="modal-message-fields" class="wrapperModalForFirstLogin__messageLogin"
+        >Please Fill In All Fields</h3
+      >
+    </form>
+
+    <script src="./assets/script/pages/login.js" type="module"></script>
+  </body>
+</html>

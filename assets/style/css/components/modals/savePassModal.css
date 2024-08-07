@@ -1,0 +1,191 @@
+:root {
+  --savePassModal-background-color: #42414d;
+  --savePassModal-texts-color: #fbfbfe;
+  --savePassModal-border-color: color-mix(in srgb, #2b2a33 75%, #fff);
+}
+
+.savePassModal {
+  width: 1000px;
+  /* height: 450px; */
+  /* height: 650px; */
+  color: var(--savePassModal-texts-color);
+  background: var(--savePassModal-background-color);
+  border: 1px solid var(--savePassModal-border-color);
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.savePassModal__modalTitle {
+  width: 775px;
+  padding-top: 2rem;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.savePassModal__elementsWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.savePassModal__innerContainer {
+  width: 775px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.savePassModal__websiteData,
+.savePassModal__websiteLogoWrapper {
+  width: calc((100% - 2rem) / 2);
+  height: 100%;
+}
+
+.savePassModal__websiteData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.savePassModal__websiteLogoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 52px;
+}
+
+.savePassModal__inputsWrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.savePassModal__inputLogoWrapper {
+  justify-content: flex-end;
+  height: 69px;
+  position: relative;
+  /* background-color: peru; */
+}
+
+.savePassModal__websiteTitle,
+.savePassModal__rootPassTitle,
+.savePassModal__logoUrlLabel {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.savePassModal__logoUrlLabel {
+  color: #00ddff;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -50%);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.savePassModal__textInputs {
+  width: 365px;
+  height: 32px;
+  padding: 22px 8px;
+  color: var(--savePassModal-texts-color);
+  background: var(--savePassModal-background-color);
+  font-size: 17px;
+  border: 1px solid var(--savePassModal-border-color);
+  border-radius: 3px;
+}
+
+.savePassModal__logoUrlInput {
+  /* color: #00ddff; */
+  position: absolute;
+  bottom: -50px;
+  /* bottom: 0px; */
+  transition: 0.5s;
+}
+
+.savePassModal__websiteNameInput {
+  text-transform: capitalize;
+}
+
+.savePassModal__wrongPassText {
+  width: 100%;
+  color: #00ddff;
+  position: relative;
+  left: -100%;
+  transition: 0.5s;
+}
+
+.savePassModal__logoFrame {
+  width: 120px;
+  height: 120px;
+  border: 1px solid var(--savePassModal-border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.savePassModal__logoWebsite {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.savePassModal__btnWrapper {
+  width: 100%;
+  padding: 20px 25px;
+  border-top: 1px solid var(--savePassModal-border-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.savePassModal__savePassBtn,
+.savePassModal__cancelPassBtn {
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(43, 42, 51);
+  background: #00ddff;
+  border: 1px solid #00ddff;
+  border-radius: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.savePassModal__cancelPassBtn {
+  background: transparent;
+  color: var(--savePassModal-texts-color);
+  border: 1px solid var(--savePassModal-border-color);
+}
+
+.savePassModal__savePassBtn:hover {
+  box-shadow: 2px 2px 15px #00ddff6a, -2px 2px 15px #00ddff6a, 2px -2px 15px #00ddff6a,
+    -2px -2px 15px #00ddff6a;
+}
+
+.savePassModal__cancelPassBtn:hover {
+  border-color: var(--savePassModal-texts-color);
+}

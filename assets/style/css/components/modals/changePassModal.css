@@ -1,0 +1,127 @@
+.changePasswordModal {
+  width: 60vw;
+  padding: 4rem 3rem;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.changePasswordModal > * {
+  width: 50%;
+}
+
+.changePasswordModal__left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.changePasswordModal__heading {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #333;
+}
+
+.changePasswordModal__contains {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--color-passwordLength);
+}
+
+.changePasswordModal__paragraph {
+  margin-bottom: 10px;
+}
+
+.rule {
+  display: flex;
+  gap: 10px;
+}
+
+.rule--true .rule__icon {
+  color: var(--color-primaryIcons);
+}
+
+.rule--true .rule__title {
+  text-decoration: line-through var(--color-primaryIcons);
+}
+
+.rule--false .rule__icon {
+  color: var(--color-closeProgramBtn);
+}
+
+.changePasswordModal__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.changeForm__password,
+.changeForm__newPassword,
+.changeForm__newPassword2,
+.changeForm__submit {
+  width: 80%;
+  height: 50px;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  border: 1px solid var(--color-passwordLength);
+  color: var(--color-passwordLength);
+}
+.changeForm__message {
+  display: none;
+  color: red;
+}
+.changeForm__submit {
+  color: white;
+  background-color: var(--color-primaryIcons);
+}
+
+.changeForm__submit:hover {
+  filter: brightness(120%);
+}
+
+.changeForm__reset {
+  width: max-content;
+  height: max-content;
+  text-decoration: underline;
+  color: var(--color-passwordLength);
+  background-color: transparent;
+  font-size: 1.2rem;
+}
+
+.changeForm__reset:hover {
+  color: black;
+}
+
+.changeForm__submit,
+.changeForm__reset {
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.changePasswordModal__closeBtn {
+  width: 30px;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+.changePasswordModal__closeBtn:hover {
+  border-color: black;
+  color: black;
+}

@@ -1,0 +1,77 @@
+.passOptionsPage {
+  width: 100%;
+  height: 100%;
+  padding: 0 3rem 0 1rem;
+  display: none;
+  flex-direction: column;
+}
+.passOptionsPage__InnerWrapper {
+  padding-left: 18px;
+}
+.passOptionsPage__header {
+  font-size: 2.2rem;
+  font-weight: 300;
+  word-spacing: 2px;
+  margin-bottom: 25px;
+}
+.passOptionsPage__charToInclude {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  gap: 25px;
+  padding-bottom: 30px;
+}
+.passOptionsPage__charSet {
+  font-size: 1.9rem;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.passOptionsPage__boxCheckbox,
+.passOptionsPage__checkboxCustomUser,
+.passOptionsPage__checkboxLabel,
+.userCustom {
+  font-size: 1.3rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.userCustom {
+  color: black;
+  padding-top: 10px;
+}
+.passOptionsPage__checkboxCustomUser {
+  padding-left: 10px;
+  display: none;
+}
+.customUser:checked ~ div {
+  display: flex;
+}
+.passOptionsPage__checkbox,
+.customUser {
+  width: 22px;
+  height: 22px;
+}
+.passOptionsPage__customCharSet {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+.passOptionsPage__iconToggleBox {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+.passOptionsPage__iconToggle {
+  font-size: 40px;
+  color: var(--color-passwordLength);
+  display: inline-flex;
+}
+.passOptionsPage__inputPass {
+  border: 2px var(--color-passwordLength) solid;
+  width: 100%;
+  height: 32px;
+  padding-left: 6px;
+}

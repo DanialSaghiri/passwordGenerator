@@ -1,0 +1,13 @@
+:root {
+  --color-primaryIcons: #0078d7;
+  --color-hoverPrimaryIcons: #1985da;
+  --color-closeProgramBtn: #e81123;
+  --color-backwardProgramBtn: #005a9e;
+  --color-hoverBackwardProgramBtn: #196aa7;
+  --color-black: black;
+  --color-white: white;
+  --color-hoverMenu: #e6e6e6;
+  --color-selectMenu: #767676;
+  --color-passwordLength: #666666;
+  --color-inputPassword: #171717;
+}

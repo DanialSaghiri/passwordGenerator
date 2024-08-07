@@ -1,0 +1,265 @@
+.savedPasswordsPage {
+  width: 100%;
+  height: 100%;
+  padding: 0 3rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  overflow: scroll;
+  display: none;
+}
+
+.savedPasswordsPage::-webkit-scrollbar {
+  display: none;
+}
+
+.savePass__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+.savePass__search {
+  width: 40%;
+  height: 40px;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.savePass__dropdown {
+  position: relative;
+  display: flex;
+  width: 20%;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.savePass__dropdownBtn {
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  gap: 20px;
+}
+
+.savePass__dropdownBtn-text {
+  font-size: 20px;
+}
+
+.savePass__dropdownOption {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #373737;
+}
+
+.savePass__dropdownOption--hide {
+  display: none;
+}
+
+.savePass__dropdownOption-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  width: 80%;
+  margin: 10px 0;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.savedPasswordsPage__passwordsWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.savedPassItem {
+  width: 100%;
+  height: 200px;
+  padding: 1rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.webSiteData {
+  width: fit-content;
+  height: 132px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.webSiteData__logo {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid #adadad;
+  border-radius: 50%;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.webSiteData__name {
+  width: 100px;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+}
+
+.passSpecs {
+  width: 70%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.savedPass {
+  position: relative;
+  width: 100%;
+  width: fit-content;
+  font-size: 1.4rem;
+  font-weight: 500;
+  word-break: break-all;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+  padding: 10px;
+  background: #fff;
+}
+
+.savedPass::after {
+  content: "";
+  display: block;
+  width: 105%;
+  height: calc(100% + 20px);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: inherit;
+  background-image: url(./../../decorations/icons8-barcode-100.png);
+  background-size: contain;
+}
+
+.show.savedPass::after {
+  display: none;
+}
+
+.passStrength {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.passStrength__strengthTitle,
+.passStrength__strengthStatus {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.passStrength__stringBar {
+  position: relative;
+  width: 70%;
+  height: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #cfcfcf;
+  background: #f3f3f3;
+}
+
+.passStrength__stringBar-color {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Weak.passStrength__stringBar-color {
+  width: 30%;
+  background-color: red;
+}
+
+.Normal.passStrength__stringBar-color {
+  width: 50%;
+  background-color: orange;
+}
+
+.Good.passStrength__stringBar-color {
+  width: 70%;
+  background-color: lightgreen;
+}
+
+.Strong.passStrength__stringBar-color {
+  width: 100%;
+  background-color: green;
+}
+
+.passData {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.passData__icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.passData__iconView,
+.passData__iconCopy,
+.passData__iconEdit,
+.passData__iconDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.passData__icons-text {
+  font-size: 16px;
+  display: none;
+}
+
+.savePass__changeDisplaySearch {
+  display: none;
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./assets/style/fontAwsomePackage/fontIcons/all.css" />
+    <link rel="stylesheet" href="./assets/style/css/app.css" />
+  </head>
+
+  <body>
+    <div class="container" id="program-container">
+      <header class="header">
+        <div class="userDropDownWrapper" id="user-dropdown-wrapper">
+          <i class="fa-solid fa-user userRootIcon" id="user-root-icon"></i>
+
+          <div class="dropDownMenu" id="drop-down-menu">
+            <button
+              class="dropDownMenu__option dropDownMenu__option--changePass"
+              id="drop-down-menu-change-pass-btn"
+              >Change Pass</button
+            >
+            <button class="dropDownMenu__option dropDownMenu__option--logOut" disabled
+              >Log Out</button
+            >
+          </div>
+        </div>
+
+        <div class="darkModeWrapper">
+          <i class="fa-duotone fa-sun-bright darkModeWrapper__darkModeIcon" id="dark-mode-btn"></i>
+        </div>
+      </header>
+
+      <nav class="menu" id="menu">
+        <i class="menu__burgerIcon fa-duotone fa-bars" id="menu-burger-icon"></i>
+
+        <ul class="menu__optionsWrapper" id="menu-options-wrapper">
+          <li
+            class="menu__option option option--selected"
+            data-target-page="passGenPage"
+            id="pass-gen-page">
+            <i class="fa-duotone fa-house option__icon"></i>
+            <span class="option__title">Password Generator</span>
+          </li>
+          <li class="menu__option option" data-target-page="passOptionsPage">
+            <i class="fa-duotone fa-wrench option__icon"></i>
+            <span class="option__title">Password Options</span>
+          </li>
+          <li class="menu__option option" data-target-page="savedPasswordsPage">
+            <i class="fa-duotone fa-bookmark option__icon"></i>
+            <span class="option__title">Saved Passwords</span>
+          </li>
+          <li class="menu__option option" data-target-page="aboutPage">
+            <i class="fa-duotone fa-stars option__icon"></i>
+            <span class="option__title">About</span>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="mainContent">
+        <!--+++++++++++++++++++++++++++++ Start Of Pass Generate Page +++++++++++++++++++++++++++++-->
+        <section class="passGenPage">
+          <h1 class="passGen__Title">Advanced Password Generator</h1>
+          <div class="passGen__InnerWrapper">
+            <h3 class="passGen__SubTitle">Generate Secure Password</h3>
+
+            <!--------------  -------------->
+            <div class="passLength">
+              <h5 class="passLength__title">Password Length</h5>
+              <input
+                type="range"
+                id="range-input"
+                class="rangeInput"
+                min="7"
+                value="12"
+                max="100"
+                on />
+              <span id="current-length" class="currentLength"></span>
+            </div>
+            <!--------------  -------------->
+
+            <!--------------  -------------->
+            <div class="securePass">
+              <h5 class="securePass__title">Secure Password</h5>
+              <div class="passInputWrapper">
+                <div type="text" class="passInput" id="result-input"></div>
+                <i class="fa-duotone fa-copy copyPassBtn" id="clip-board-btn"></i>
+              </div>
+            </div>
+
+            <div class="genBtnsWrapper">
+              <i class="fa-duotone fa-key fa-flip-horizontal genPassBtn" id="gen-pass-btn"></i>
+              <i class="fa-duotone fa-bookmark savePassBtn" id="save-pass-generated-btn"></i>
+            </div>
+            <!--------------  -------------->
+          </div>
+        </section>
+        <!--------------------------------------- End Of Pass Generate Page ---------------------------------------------->
+
+        <!--+++++++++++++++++++++++++++++ Start Of Pass Option Page +++++++++++++++++++++++++++++-->
+        <section class="passOptionsPage">
+          <h1 class="passOptionsPage__header">Password Options</h1>
+          <div class="passOptionsPage__InnerWrapper">
+            <h2 class="passOptionsPage__charSet">Character Set</h2>
+            <div class="passOptionsPage__charToInclude" id="options-char-to-include">
+              <h4 class="passOptionsPage__title">Characters to include</h4>
+              <div class="passOptionsPage__boxCheckbox">
+                <input type="checkbox" id="options-lower-case" class="passOptionsPage__checkbox" />
+                <label for="options-lower-case" class="passOptionsPage__checkboxLabel"
+                  >Lower case letters {abc...}</label
+                >
+              </div>
+              <div class="passOptionsPage__boxCheckbox">
+                <input type="checkbox" id="options-upper-case" class="passOptionsPage__checkbox" />
+                <label for="options-upper-case" class="passOptionsPage__checkboxLabel"
+                  >Upper case letters {ABC...}</label
+                >
+              </div>
+              <div class="passOptionsPage__boxCheckbox">
+                <input type="checkbox" id="options-numbers" class="passOptionsPage__checkbox" />
+                <label for="option-numbers" class="passOptionsPage__checkboxLabel">Numbers {123...}</label>
+              </div>
+              <div class="passOptionsPage__boxCheckbox">
+                <input type="checkbox" id="options-symbol" class="passOptionsPage__checkbox" />
+                <label for="options-symbol" class="passOptionsPage__checkboxLabel"
+                  >Special Characters {@#$...}</label
+                >
+              </div>
+            </div>
+            <div class="passOptionsPage__customCharSet">
+              <h4 class="passOptionsPage__title">Custom Character Set</h4>
+              <div class="passOptionsPage__iconToggleBox">
+                <i
+                  class="passOptionsPage__iconToggle fa-solid fa-toggle-on"
+                  id="options-icon-toggle"></i>
+                <label
+                  for="options-icon-toggle"
+                  class="passOptionsPage__iconToggleLable"
+                  id="options-icon-toggle-lable"
+                  >On</label
+                >
+              </div>
+              <input type="text" class="passOptionsPage__inputPass" id="options-input-pass" />
+            </div>
+            <div class="userCustom" id="user-custom">
+              <input type="checkbox" id="options-custom-user" class="customUser" />
+              <label for="options-custom-user" class="passOptionsPage__checkboxLabel"
+                >User custom password</label
+              >
+              <div class="passOptionsPage__checkboxCustomUser">
+                <input
+                  type="radio"
+                  id="options-custom-user-first"
+                  name="customuser"
+                  class="customUser" />
+                <label for="options-custom-user-first" class="passOptionsPage__checkboxLabel"
+                  >First</label
+                >
+                <input
+                  type="radio"
+                  id="options-custom-user-end"
+                  name="customuser"
+                  class="customUser" />
+                <label for="options-custom-user-end" class="passOptionsPage__checkboxLabel"
+                  >End</label
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--------------------------------------- End Of Pass Option Page ---------------------------------------------->
+
+        <!--++++++++++++++++++++++++++++++ Start Of About Page ++++++++++++++++++++++++++++++-->
+        <section class="aboutPage" id="aboutPage">
+          <h1 class="aboutPage__header">About</h1>
+          <div class="aboutPage__innerWrapper">
+            <section class="aboutPage__profiles" id="profiles-wrapper"></section>
+          </div>
+        </section>
+        <!---------------------------------------- End Of About Page ----------------------------------------------->
+
+        <!--++++++++++++++++++++++++++++++ Start Of Saved Pass Page ++++++++++++++++++++++++++++++-->
+        <section class="savedPasswordsPage" id="saved-passwords-page">
+          <div class="savePass__header">
+            <input
+              type="search"
+              id="searchBox"
+              class="savePass__search"
+              placeholder="Search"
+              autocomplete="off" />
+
+            <div class="savePass__dropdown">
+              <button class="savePass__dropdownBtn" id="btnSort">
+                <span class="savePass__dropdownBtn-text">sort</span>
+                <i class="fa-solid fa-arrow-down"></i>
+              </button>
+              <div class="savePass__dropdownOption savePass__dropdownOption--hide" id="optionSort">
+                <button class="savePass__dropdownOption-text" id="Letters">Letters</button>
+                <button class="savePass__dropdownOption-text" id="Date">Date</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="savedPasswordsPage__passwordsWrapper" id="saved-passwords-wrapper"></div>
+        </section>
+        <!---------------------------------------- End Of Saved Pass Page ----------------------------------------------->
+      </main>
+
+      <div class="modalsWrapper" id="modals-wrapper">
+        <!-- Start of Change password modal -->
+        <div class="changePasswordModal" id="modal-change-pass">
+          <div class="changePasswordModal__left">
+            <h3 class="changePasswordModal__heading">Change User Password</h3>
+            <ul class="changePasswordModal__contains containRules">
+              <p class="changePasswordModal__paragraph">Password must contain:</p>
+
+              <li class="containRules__rule rule rule--true">
+                <i class="rule__icon fa-regular fa-check"></i>
+                <span class="rule__title">At least 6 characters</span>
+              </li>
+
+              <li class="containRules__rule rule rule--true">
+                <i class="rule__icon fa-regular fa-check"></i>
+                <span class="rule__title">At least 1 upper case letter (A..Z)</span>
+              </li>
+
+              <li class="containRules__rule rule rule--false">
+                <i class="rule__icon fa-regular fa-x"></i>
+                <span class="rule__title">At least 1 lower case letter (a..z)</span>
+              </li>
+
+              <li class="containRules__rule rule rule--false">
+                <i class="rule__icon fa-regular fa-x"></i>
+                <span class="rule__title">At least 1 number (0..9)</span>
+              </li>
+            </ul>
+          </div>
+
+          <form
+            class="changePasswordModal__right changeForm"
+            id="modal-change-form"
+            autocomplete="off">
+            <input
+              type="password"
+              class="changeForm__password"
+              id="modal-change-form-pass"
+              placeholder="Enter your password" />
+
+            <input
+              type="password"
+              class="changeForm__newPassword"
+              id="modal-change-form-new-pass"
+              placeholder="Enter new password" />
+
+            <input
+              type="password"
+              class="changeForm__newPassword2"
+              id="modal-change-form-new-pass2"
+              placeholder="Re-Enter new password" />
+            <input type="submit" class="changeForm__submit" value="Save" />
+            <input type="reset" class="changeForm__reset" value="Cancel" />
+            <h3 id="modal-change-pass-message-fields" class="changeForm__message"
+              >Please Fill In All Fields</h3
+            >
+            <h3 id="modal-change-pass-message-root-pass" class="changeForm__message"
+              >Your Previous Password Is Incorrect</h3
+            >
+            <h3 id="modal-change-pass-message-check-pass" class="changeForm__message"
+              >New Passwords Does Not Match</h3
+            >
+          </form>
+
+          <i
+            class="changePasswordModal__closeBtn fa-regular fa-x"
+            id="modal-change-pass-close-btn"></i>
+        </div>
+        <!-- End of Change password modal -->
+
+        <!-------------- Start Of Save Password Modal -------------->
+        <form class="savePassModal" id="save-pass-modal">
+          <h3 class="savePassModal__modalTitle">Save Password</h3>
+          <div class="savePassModal__elementsWrapper">
+            <div class="savePassModal__innerContainer">
+              <div class="savePassModal__websiteData">
+                <div class="savePassModal__inputsWrapper">
+                  <h4 class="savePassModal__websiteTitle">Website Name</h4>
+                  <input
+                    type="text"
+                    class="savePassModal__textInputs savePassModal__websiteNameInput"
+                    id="input-website-name"
+                    autocomplete="off" />
+                </div>
+
+                <div class="savePassModal__inputsWrapper">
+                  <h4 class="savePassModal__rootPassTitle">User root Password</h4>
+                  <input
+                    type="password"
+                    class="savePassModal__textInputs savePassModal__rootPassInput"
+                    id="input-user-pass" />
+                  <p class="savePassModal__wrongPassText" id="wrong-pass-alert"
+                    >The password you entered is incorrect</p
+                  >
+                </div>
+              </div>
+
+              <div class="savePassModal__websiteLogoWrapper">
+                <div class="savePassModal__logoFrame">
+                  <img
+                    class="savePassModal__logoWebsite"
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fwebsite-clipart-world-wide-web-19.png&f=1&nofb=1&ipt=8a18f6896f4dd4d12aa9397cc7d5a40b240eee04dc48afc0bdaa2ccab76d8073&ipo=images" />
+                </div>
+                <div class="savePassModal__inputsWrapper savePassModal__inputLogoWrapper">
+                  <h4 class="savePassModal__logoUrlLabel" id="open-btn-url-logo"
+                    >Use a custom image...</h4
+                  >
+                  <input
+                    type="text"
+                    class="savePassModal__textInputs savePassModal__logoUrlInput"
+                    id="input-logo-url" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="savePassModal__btnWrapper">
+            <input
+              class="savePassModal__cancelPassBtn"
+              id="save-pass-modal-close-btn"
+              type="reset"
+              value="Cancel" />
+            <button class="savePassModal__savePassBtn" id="save-pass-modal-pass-btn">Save</button>
+          </div>
+        </form>
+
+        <!--------------- End Of Modal --------------->
+
+        <!------------------------- actions password modal  ------------------------->
+        <div class="actionPasswordModal" id="modal-actions-pass">
+          <h3 class="actionPasswordModal__heading" id="action-modal-title"></h3>
+
+          <form class="actionPasswordModal__form actionForm" id="modal-actions-form">
+            <input
+              type="password"
+              class="actionForm__password"
+              id="modal-actions-pass-input"
+              placeholder="Enter your password" />
+
+            <input
+              type="submit"
+              class="actionForm__submit"
+              id="modal-action-submit-btn"
+              value="submit" />
+            <input type="reset" class="actionForm__reset" value="Reset" />
+          </form>
+
+          <i
+            class="actionPasswordModal__closeBtn fa-regular fa-x"
+            id="modal-actions-pass-close-btn"></i>
+        </div>
+        <!------------------------- actions password modal  ------------------------->
+      </div>
+    </div>
+
+    <script src="./assets/script/app.js"></script>
+    <script src="./assets/script/pages/01-passGenPage.js" type="module"></script>
+    <script src="./assets/script/pages/02-passOptionsPage.js" type="module"></script>
+    <script src="./assets/script/pages/03-savePassPage.js" type="module"></script>
+    <script src="./assets/script/pages/04-aboutPage.js"></script>
+    <script src="./assets/script/components/darkMode/darkMode.js"></script>
+    <script src="./assets/script/components/modals/savePassModal.js" type="module"></script>
+    <script src="./assets/script/components/modals/changePasswordModal.js" type="module"></script>
+    <script src="./assets/script/components/modals/actionPasswordModal.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+@import url("./../variables/reset.css");
+@import url("./../variables/fonts.css");
+@import url("./../variables/colors.css");
+
+.wrapperModalForFirstLogin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 35%;
+  height: 60%;
+  box-shadow: 0 0 10px 0 var(--color-selectMenu);
+  border: 3px solid var(--color-selectMenu);
+  border-radius: 5px;
+  padding: 15px 0;
+}
+
+.wrapperModalForFirstLogin__title {
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+
+.wrapperModalForFirstLogin__inputUsername,
+.wrapperModalForFirstLogin__inputPassword,
+.wrapperModalForFirstLogin__inputPasswordAgain {
+  width: 90%;
+  height: 50px;
+  padding: 0 8px;
+  outline: none;
+  border: 2px solid var(--color-selectMenu);
+  border-radius: 7px;
+  font-weight: bold;
+}
+.wrapperModalForFirstLogin__messageLogin {
+  display: none;
+  color: red;
+}
+.wrapperModalForFirstLogin__btnLogin {
+  width: 90%;
+  height: 50px;
+  font-weight: bold;
+  outline: none;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: rgb(0, 72, 255);
+  letter-spacing: 1px;
+  color: white;
+}
+
+.wrapperModalForFirstLogin__btnLogin:hover {
+  opacity: 0.9;
+}
